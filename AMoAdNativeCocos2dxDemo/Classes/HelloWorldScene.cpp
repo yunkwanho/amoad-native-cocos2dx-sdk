@@ -1,6 +1,11 @@
 #include "HelloWorldScene.h"
+#include "AMoAdNativeCocos2dxModule.h"  // [SDK] Cocos2d-xモジュール
 
 USING_NS_CC;
+
+// [SDK] 管理画面から取得したsidを入力してください
+#define AD_SID "62056d310111552c000000000000000000000000000000000000000000000000"
+#define AD_TAG "Ad01"
 
 Scene* HelloWorld::createScene()
 {
@@ -62,7 +67,7 @@ bool HelloWorld::init()
 
     // add the label as a child to this layer
     this->addChild(label, 1);
-
+#if 0
     // add "HelloWorld" splash screen"
     auto sprite = Sprite::create("HelloWorld.png");
 
@@ -71,7 +76,55 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
-    
+#endif
+
+    /////////////////////////////
+    // 4. [SDK] 広告
+
+    //  AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120, "{\"border\": \"dotted 2px #0000ff\"}");
+    AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120);
+
+    // メニュー
+    auto showLabel = Label::createWithSystemFont("表示", "Arial", 9);
+    auto showBtnItem = MenuItemLabel::create(showLabel, [this](Ref *sender){
+      AMoAdNativeCocos2dxModule::show(AD_SID, AD_TAG);
+    });
+    showBtnItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+
+    auto hideLabel = Label::createWithSystemFont("非表示", "Arial", 9);
+    auto hideBtnItem = MenuItemLabel::create(hideLabel, [this](Ref *sender){
+      AMoAdNativeCocos2dxModule::hide(AD_SID, AD_TAG);
+    });
+    hideBtnItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 20));
+
+    auto rotationStartLabel = Label::createWithSystemFont("ローテーション開始(10秒)", "Arial", 9);
+    auto rotationStartBtnItem = MenuItemLabel::create(rotationStartLabel, [this](Ref *sender){
+      AMoAdNativeCocos2dxModule::startRotation(AD_SID, AD_TAG, 9);
+    });
+    rotationStartBtnItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 20 - 20));
+
+    auto rotationStopLabel = Label::createWithSystemFont("ローテーション停止", "Arial", 9);
+    auto rotationStopBtnItem = MenuItemLabel::create(rotationStopLabel, [this](Ref *sender){
+      AMoAdNativeCocos2dxModule::stopRotation(AD_SID, AD_TAG);
+    });
+    rotationStopBtnItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 20 - 20 - 20));
+
+    auto reloadLabel = Label::createWithSystemFont("リロード", "Arial", 9);
+    auto reloadBtnItem = MenuItemLabel::create(reloadLabel, [this](Ref *sender){
+      AMoAdNativeCocos2dxModule::reload(AD_SID, AD_TAG);
+    });
+    reloadBtnItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 20 - 20 - 20 - 20));
+
+    auto removeLabel = Label::createWithSystemFont("remove", "Arial", 9);
+    auto removeBtnItem = MenuItemLabel::create(removeLabel, [this](Ref *sender){
+      AMoAdNativeCocos2dxModule::remove(AD_SID, AD_TAG);
+    });
+    removeBtnItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 20 - 20 - 20 - 20 - 20));
+
+    Menu* adMenu = Menu::create(showBtnItem, hideBtnItem, rotationStartBtnItem, rotationStopBtnItem, reloadBtnItem, removeBtnItem, NULL);
+    adMenu->setPosition(Point::ZERO);
+    this->addChild(adMenu);
+
     return true;
 }
 

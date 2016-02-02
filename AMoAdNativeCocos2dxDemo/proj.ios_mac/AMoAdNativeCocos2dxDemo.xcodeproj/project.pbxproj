@@ -67,6 +67,11 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		E9161A0F1C60B4F6000B8381 /* AMoAdNativeCocos2dxModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9161A0E1C60B4F6000B8381 /* AMoAdNativeCocos2dxModule.mm */; };
+		E9161A131C60B50B000B8381 /* libAMoAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9161A121C60B50B000B8381 /* libAMoAd.a */; };
+		E9161A151C60B527000B8381 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9161A141C60B527000B8381 /* AdSupport.framework */; };
+		E9161A171C60B532000B8381 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9161A161C60B532000B8381 /* ImageIO.framework */; };
+		E9161A191C60B53C000B8381 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9161A181C60B53C000B8381 /* StoreKit.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 /* End PBXBuildFile section */
@@ -161,6 +166,14 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		E9161A0B1C60B4C2000B8381 /* AMoAdNativeCocos2dxModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdNativeCocos2dxModule.h; sourceTree = "<group>"; };
+		E9161A0E1C60B4F6000B8381 /* AMoAdNativeCocos2dxModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AMoAdNativeCocos2dxModule.mm; path = AMoAdModule/AMoAdNativeCocos2dxModule.mm; sourceTree = SOURCE_ROOT; };
+		E9161A101C60B50B000B8381 /* AMoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMoAd.h; path = AMoAdSdk/AMoAd.h; sourceTree = SOURCE_ROOT; };
+		E9161A111C60B50B000B8381 /* AMoAdNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMoAdNative.h; path = AMoAdSdk/AMoAdNative.h; sourceTree = SOURCE_ROOT; };
+		E9161A121C60B50B000B8381 /* libAMoAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAMoAd.a; path = AMoAdSdk/libAMoAd.a; sourceTree = SOURCE_ROOT; };
+		E9161A141C60B527000B8381 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		E9161A161C60B532000B8381 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		E9161A181C60B53C000B8381 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -170,6 +183,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9161A131C60B50B000B8381 /* libAMoAd.a in Frameworks */,
+				E9161A191C60B53C000B8381 /* StoreKit.framework in Frameworks */,
+				E9161A171C60B532000B8381 /* ImageIO.framework in Frameworks */,
+				E9161A151C60B527000B8381 /* AdSupport.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
@@ -211,6 +228,8 @@
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				E9161A0D1C60B4D8000B8381 /* AMoAdModule */,
+				E9161A0C1C60B4CD000B8381 /* AMoAdSdk */,
 				5087E77117EB970100C73F5D /* Icons */,
 				503AE0FA17EB989F00D1A890 /* AppController.h */,
 				503AE0FB17EB989F00D1A890 /* AppController.mm */,
@@ -258,6 +277,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9161A181C60B53C000B8381 /* StoreKit.framework */,
+				E9161A161C60B532000B8381 /* ImageIO.framework */,
+				E9161A141C60B527000B8381 /* AdSupport.framework */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
@@ -297,6 +319,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E9161A0B1C60B4C2000B8381 /* AMoAdNativeCocos2dxModule.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -352,6 +375,24 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		E9161A0C1C60B4CD000B8381 /* AMoAdSdk */ = {
+			isa = PBXGroup;
+			children = (
+				E9161A101C60B50B000B8381 /* AMoAd.h */,
+				E9161A111C60B50B000B8381 /* AMoAdNative.h */,
+				E9161A121C60B50B000B8381 /* libAMoAd.a */,
+			);
+			name = AMoAdSdk;
+			sourceTree = "<group>";
+		};
+		E9161A0D1C60B4D8000B8381 /* AMoAdModule */ = {
+			isa = PBXGroup;
+			children = (
+				E9161A0E1C60B4F6000B8381 /* AMoAdNativeCocos2dxModule.mm */,
+			);
+			name = AMoAdModule;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -494,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9161A0F1C60B4F6000B8381 /* AMoAdNativeCocos2dxModule.mm in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -553,7 +595,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/AMoAdSdk";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -588,7 +630,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/AMoAdSdk";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
