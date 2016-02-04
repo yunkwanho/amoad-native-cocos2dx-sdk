@@ -50,6 +50,13 @@ AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120,
 
 ### Android設定例
 
+1. ダウンロードしたZIPファイルのデモプロゼックトを開発ツールで開く。  
+・ Eclipseで「../AMoAdNativeCocos2dxDemo/proj.android/」をFile>Importする。  
+・ AndroidStudioで「../AMoAdNativeCocos2dxDemo/proj.android-studio/」をFile>Openする。  
+
+2. AndroidプロジェックトでGooglePlayerServiceを設定する。
+   ([GooglePlayerService設定方法](https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project))
+
 #### Eclipse
 
 <img width="640" src="docs/res/AndroidEclipse.png">
