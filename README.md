@@ -47,3 +47,13 @@ AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120,
 ### iOS設定例
 
 <img width="640" src="docs/res/ScreenShot04.png">
+
+### Android設定例
+
+#### Eclipse
+
+<img width="640" src="docs/res/AndroidEclipse.png">
+
+#### AndroidStudio
+
+<img width="640" src="docs/res/AndroidStudio.png">
