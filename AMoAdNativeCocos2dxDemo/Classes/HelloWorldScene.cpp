@@ -82,8 +82,8 @@ bool HelloWorld::init()
     // 4. [SDK] 広告
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    //  AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 60, 300, 400, 400, "{\"border\": \"dotted 2px #0000ff\"}");
-    AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 60, 300, 400, 400);
+    //  AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120, "{\"border\": \"dotted 2px #0000ff\"}");
+    AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120);
 #else
     //  AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120, "{\"border\": \"dotted 2px #0000ff\"}");
     AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120);

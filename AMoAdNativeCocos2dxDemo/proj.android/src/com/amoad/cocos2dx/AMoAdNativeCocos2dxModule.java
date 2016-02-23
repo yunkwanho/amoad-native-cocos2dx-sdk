@@ -1,9 +1,12 @@
 package com.amoad.cocos2dx;
 
 import android.app.Activity;
+import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.amoad.AMoAdBuildConfig;
@@ -21,10 +24,10 @@ public final class AMoAdNativeCocos2dxModule {
      *
      * @param sid 管理画面から取得した64文字の英数字
      * @param tag 同じsidの複数広告を識別するための任意の文字列
-     * @param x 広告のX座標
-     * @param y 広告のY座標
-     * @param width 広告の横幅
-     * @param height 広告の縦幅
+     * @param x 広告のX座標(dpi)
+     * @param y 広告のY座標(dpi)
+     * @param width 広告の横幅(dpi)
+     * @param height 広告の縦幅(dpi)
      */
     public static void load(String sid, String tag, int x, int y, int width, int height) {
         load(sid, tag, x, y, width, height, null);
@@ -35,10 +38,10 @@ public final class AMoAdNativeCocos2dxModule {
      *
      * @param sid 管理画面から取得した64文字の英数字
      * @param tag 同じsidの複数広告を識別するための任意の文字列
-     * @param x 広告のX座標
-     * @param y 広告のY座標
-     * @param width 広告の横幅
-     * @param height 広告の縦幅
+     * @param x 広告のX座標(dpi)
+     * @param y 広告のY座標(dpi)
+     * @param width 広告の横幅(dpi)
+     * @param height 広告の縦幅(dpi)
      * @param option 開発用
      */
     public static void load(final String sid, final String tag, final int x, final int y, final int width, final int height, String option) {
@@ -165,9 +168,17 @@ public final class AMoAdNativeCocos2dxModule {
     private static void addView(View view, int x, int y, int width, int height) {
         FrameLayout parent = getContentView();
         if (parent != null) {
-            FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(width, height);
-            lp.topMargin = y;
-            lp.leftMargin = x;
+
+            //dpiをpixelに変換する
+            float density = getDensity(getCurrentActivity());
+            int xDpi = dpiToPixel(x, density);
+            int yDpi = dpiToPixel(y, density);
+            int widthDpi = dpiToPixel(width, density);
+            int heightDpi = dpiToPixel(height, density);
+
+            FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(widthDpi, heightDpi);
+            lp.topMargin = yDpi;
+            lp.leftMargin = xDpi;
             parent.addView(view, lp);
         }
     }
@@ -193,5 +204,16 @@ public final class AMoAdNativeCocos2dxModule {
             }
         }
         return null;
+    }
+
+    private static int dpiToPixel(int dpiValue, float density) {
+        return (int) (dpiValue * density + 0.5F);
+    }
+
+    private static final float getDensity(Context context) {
+        final WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        final DisplayMetrics metrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(metrics);
+        return metrics.density;
     }
 }
