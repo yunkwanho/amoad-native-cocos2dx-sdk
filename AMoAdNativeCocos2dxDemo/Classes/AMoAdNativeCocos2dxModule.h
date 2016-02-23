@@ -1,8 +1,6 @@
 //
 //  AMoAdNativeCocos2dxModule.h
 //
-//  v1.0.0
-//
 //  Created by AMoAd on 2016/02/01.
 //
 #ifndef __AMoAdNativeCocos2dxModule__
@@ -18,7 +16,7 @@ private:
   AMoAdNativeCocos2dxModule();
 public:
   /// モジュールバージョン
-  static constexpr char const* VersionNo = "1.0.0";
+  static constexpr char const* VersionNo = "1.0.1";
 
 
   /// 広告をロードする
