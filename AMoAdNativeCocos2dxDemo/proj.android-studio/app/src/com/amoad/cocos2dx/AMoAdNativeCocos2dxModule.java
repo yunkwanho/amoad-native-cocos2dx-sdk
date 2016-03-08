@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 
 import com.amoad.AMoAdBuildConfig;
 import com.amoad.AMoAdLogger;
+import com.amoad.AdRequest;
 import com.amoad.Native;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
@@ -161,8 +162,17 @@ public final class AMoAdNativeCocos2dxModule {
      *
      * @param seconds
      */
-    public static void setNetworkTimeoutSeconds(int seconds) {
-        Native.setNetworkTimeoutSeconds(seconds);
+    public static void setConnectTimeoutSeconds(int seconds) {
+        AdRequest.setConnectTimeout(seconds);
+    }
+
+    /**
+     * 開発用
+     *
+     * @param seconds
+     */
+    public static void setReadTimeoutSeconds(int seconds) {
+        AdRequest.setReadTimeout(seconds);
     }
 
     private static void addView(View view, int x, int y, int width, int height) {

@@ -29,7 +29,8 @@ GoogleMediation/AmoAdAdapter/Library/
 ProjectSettings/
 
 #cocos2d-x
-libs/
+#libs/
+armeabi/
 bin/
 obj/
 assets/
