@@ -60,7 +60,6 @@
 
 /// 開発用
 + (void)setHtmlUrlString:(NSString *)htmlUrlString;
-+ (void)setNetworkTimeoutSeconds:(NSTimeInterval)seconds;
 + (void)loadWithSid:(NSString *)sid tag:(NSString *)tag frame:(CGRect)frame completion:(void (^)(NSString *sid, NSString *tag, AMoAdResult result, NSDictionary *serverInfo))completion option:(NSDictionary *)option;
 - (instancetype)init __attribute__((unavailable("This method is not available.")));
 @end
