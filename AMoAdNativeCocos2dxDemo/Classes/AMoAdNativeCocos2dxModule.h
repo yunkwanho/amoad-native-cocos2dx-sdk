@@ -64,10 +64,6 @@ public:
   static void setHtmlUrlString(const char* htmlUrlString);
 
   /// 開発用
-  /// @param seconds
-  static void setNetworkTimeoutSeconds(int seconds);
-
-  /// 開発用
   /// @param sid 管理画面から取得した64文字の英数字
   /// @param tag 同じsidを複数のビューで使用するときの識別子<br />任意の文字列を指定できます
   /// @param x 広告のX座標

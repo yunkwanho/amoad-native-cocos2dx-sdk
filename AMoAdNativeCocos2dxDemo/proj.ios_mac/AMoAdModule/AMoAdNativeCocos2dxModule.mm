@@ -74,11 +74,6 @@ void AMoAdNativeCocos2dxModule::setHtmlUrlString(const char* cHtmlUrlString)
   [AMoAdNative setHtmlUrlString:htmlUrlString];
 }
 
-void AMoAdNativeCocos2dxModule::setNetworkTimeoutSeconds(int seconds)
-{
-  [AMoAdNative setNetworkTimeoutSeconds:seconds];
-}
-
 void AMoAdNativeCocos2dxModule::load(const char* cSid, const char* cTag, int x, int y, int width, int height, const char* cOption)
 {
   NSString *sid = @(cSid);
