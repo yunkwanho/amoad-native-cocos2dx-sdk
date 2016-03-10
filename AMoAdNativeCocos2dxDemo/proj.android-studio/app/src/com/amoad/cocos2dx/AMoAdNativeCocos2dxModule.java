@@ -156,15 +156,6 @@ public final class AMoAdNativeCocos2dxModule {
         AMoAdBuildConfig.HTML_URL = htmlUrlString;
     }
 
-    /**
-     * 開発用
-     *
-     * @param seconds
-     */
-    public static void setNetworkTimeoutSeconds(int seconds) {
-        Native.setNetworkTimeoutSeconds(seconds);
-    }
-
     private static void addView(View view, int x, int y, int width, int height) {
         FrameLayout parent = getContentView();
         if (parent != null) {

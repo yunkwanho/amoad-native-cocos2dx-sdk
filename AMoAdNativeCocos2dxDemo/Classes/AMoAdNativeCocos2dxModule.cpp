@@ -118,12 +118,3 @@ void AMoAdNativeCocos2dxModule::setHtmlUrlString(const char* cHtmlUrlString)
   }
 }
 
-void AMoAdNativeCocos2dxModule::setNetworkTimeoutSeconds(int seconds)
-{
-  cocos2d::JniMethodInfo jniMethodInfo;
-  if (cocos2d::JniHelper::getStaticMethodInfo(jniMethodInfo, AMOAD_COCOS2DX_MODULE_CLASS_NAME, "setNetworkTimeoutSeconds", "(I)V")) {
-    jniMethodInfo.env->CallStaticVoidMethod(jniMethodInfo.classID, jniMethodInfo.methodID, seconds);
-    jniMethodInfo.env->DeleteLocalRef(jniMethodInfo.classID);
-  }
-}
-
