@@ -16,7 +16,7 @@ private:
   AMoAdNativeCocos2dxModule();
 public:
   /// モジュールバージョン
-  static constexpr char const* VersionNo = "1.0.1";
+  static constexpr char const* VersionNo = "1.0.2";
 
 
   /// 広告をロードする
