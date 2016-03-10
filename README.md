@@ -46,6 +46,8 @@ AMoAdNativeCocos2dxModule::load(AD_SID, AD_TAG, 20, 100, 140, 120,
 
 ### iOS設定例
 
+[ATS (App Transport Security) を抑制する](https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Install/Install.asciidoc#ats-app-transport-security-を抑制する)
+
 <img width="640" src="docs/res/ScreenShot04.png">
 
 ### Android設定例
